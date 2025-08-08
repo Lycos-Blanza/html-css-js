@@ -15,6 +15,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
+// CONTACT FORM
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
   const name = document.getElementById('name');
@@ -22,13 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const message = document.getElementById('message');
   const pattern = /^[a-z0-9.]+@[a-z0-9.]+\.[a-z]{2,}$/;
 
-  // Clear error while typing
   [name, email, message].forEach(i => i.addEventListener('input', () => i.setCustomValidity('')));
 
   // Capture-phase submit handler: runs before other handlers and blocks them if validation fails
   form.addEventListener('submit', function (e) {
-    e.preventDefault();               // stop normal submit
-    e.stopImmediatePropagation();     // prevent any other submit handlers from running
+    e.preventDefault();               // This stop normal submit
+    e.stopImmediatePropagation();     // Thisprevent any other submit handlers from running
 
     const nameVal = name.value.trim();
     let emailVal = email.value.trim();
@@ -69,9 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Passed all checks — do the success action
     alert('Thank you for contacting me! I will get back to you shortly.');
     form.reset();
-  }, true); // <-- true = capture
+  }, true);
 });
 
+// Color Randomizer For Project Section
 function getRandomDarkColor() {
   const r = Math.floor(Math.random() * 100); 
   const g = Math.floor(Math.random() * 100);
@@ -79,6 +80,7 @@ function getRandomDarkColor() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
+// Triggers once clicked
 document.addEventListener('click', function (e) {
   const card = e.target.closest('.project-card');
   if (card) {

@@ -1,7 +1,7 @@
   :root {
     scroll-padding-top: 80px;
   }
-
+  
   html {
     scroll-behavior: smooth;
   }
@@ -15,6 +15,7 @@
     padding-top: 100px;
   }
 
+  /*NAVIGATION SECTION*/
   .navbar {
     position: fixed;
     top: 0;
@@ -42,25 +43,8 @@
   .nav-link:hover {
     color: #00bfff !important;
   }
-
-  .connect-btn-top {
-    margin-left: 20px;
-    padding: 8px 20px;
-    background: transparent;
-    border: 2px solid #00bfff;
-    color: #00bfff;
-    border-radius: 50px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    margin-top: -4px;
-  }
-
-  .connect-btn-top:hover {
-    background: #00bfff;
-    color: #000;
-  }
-
+  
+  /*HERO SECTION*/
   .hero {
     display: flex;
     flex-wrap: wrap;
@@ -69,6 +53,26 @@
     padding: 80px 10%;
     height: 90vh;
     background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  }
+
+  .hero-typing {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgb(45, 59, 184); 
+    width: 14ch;
+    animation: typing 1s steps(14) forwards, blink 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+  from { width: 0; }
+  to { width: 8.2ch; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+    100% { border-color: rgb(45, 59, 184); }
   }
 
   .hero-text {
@@ -84,20 +88,6 @@
     border-radius: 20px;
     display: inline-block;
     margin-bottom: 20px;
-  }
-
-  .hero h1 {
-    font-size: 56px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    min-height: 130px;
-  }
-
-  .hero p {
-    color: #a8d3ff;
-    font-size: 16px;
-    line-height: 0.5.8;
   }
 
   .hero-img {
@@ -145,25 +135,9 @@
     color: #00bfff;
   }
 
-  @media screen and (max-width: 768px) {
-    .hero {
-      flex-direction: column;
-      text-align: center;
-    }
+  /*PROJECT SECTION*/
 
-    .hero h1 {
-      font-size: 40px;
-    }
-
-    .hero-img {
-      margin-top: 40px;
-    }
-
-    .connect-btn-top {
-      display: none;
-    }
-  }
-
+  /*Switch Tab*/
   .tab-buttons {
     display: flex;
     justify-content: center;
@@ -210,6 +184,7 @@
     color: #000;
   }
 
+  /*Project 1 to 3*/
   .project-card {
     background: #101c3c;
     border-radius: 10px;
@@ -277,17 +252,6 @@
   .view-btn:hover {
     background: #fff;
     color: #000;
-  }
-
-  /* Sticky Navbar */
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    background: rgba(10, 15, 44, 0.95);
-    padding: 20px 50px;
-    backdrop-filter: blur(8px);
   }
 
   body {
